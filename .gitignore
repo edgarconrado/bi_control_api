@@ -1,0 +1,14 @@
+/target
+./.idea
+
+./vscode
+.vscode/
+.history
+
+src/main/resources/biControlApi.properties
+src/main/resources/tnutil.properties
+src/main/resources/global.properties
+bicontrolapi.iml
+.history/
+.vscode/
+.idea/
