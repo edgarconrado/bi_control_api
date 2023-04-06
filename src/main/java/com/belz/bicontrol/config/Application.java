@@ -10,7 +10,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class  Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
