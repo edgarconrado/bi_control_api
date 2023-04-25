@@ -15,7 +15,7 @@ import java.util.Date;
 @Entity
 public class safUnidades {
 
-    private Long id_unidades;
+    private Long idUnidades;
     private String unidadId;
     private Integer dimension;
     private String divisa;
