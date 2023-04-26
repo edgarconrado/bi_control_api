@@ -13,7 +13,7 @@ import java.util.Date;
 @ToString
 @Table(name = "saf_bitacora")
 @Entity
-public class safBitacora {
+public class SafBitacora {
 
     private Long idBitacora;
     private Integer bitacora;

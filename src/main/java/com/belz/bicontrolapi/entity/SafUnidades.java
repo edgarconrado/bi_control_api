@@ -13,7 +13,7 @@ import java.util.Date;
 @ToString
 @Table(name = "saf_unidades")
 @Entity
-public class safUnidades {
+public class SafUnidades {
 
     private Long idUnidades;
     private String unidadId;

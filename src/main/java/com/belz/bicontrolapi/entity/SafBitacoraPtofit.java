@@ -15,7 +15,7 @@ import java.util.Date;
 @ToString
 @Table(name = "saf_bitacora-ptofit")
 @Entity
-public class safBitacoraPtofit {
+public class SafBitacoraPtofit {
 
     @Id
     @Column(name = "id")
