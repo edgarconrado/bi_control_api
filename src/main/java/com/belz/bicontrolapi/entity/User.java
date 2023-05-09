@@ -19,19 +19,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idUsuario;
 
-    @Column(name = "id_usuario")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "id_usuario")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "id_usuario")
+    @Column(name = "active")
     private Boolean active;
 
-    @Column(name = "id_usuario")
+    @Column(name = "random_token")
     private String randomToken;
 
-    @Column(name = "id_usuario")
+    @Column(name = "expiration_random_token")
     private Date expirationRandomToken;
 
 }

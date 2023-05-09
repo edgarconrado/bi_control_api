@@ -1,20 +1,27 @@
 package com.belz.bicontrolapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerator;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "saf_unidades")
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.IntSequenceGenerator.class,
+        property = "@id"
+)
 public class SafUnidades {
 
     @Id
@@ -110,5 +117,7 @@ public class SafUnidades {
 
     @Column(name = "YearsRestantes")
     private Integer yearsRestantes;
+
+
 }
 

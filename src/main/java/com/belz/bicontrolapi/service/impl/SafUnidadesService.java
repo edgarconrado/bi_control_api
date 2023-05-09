@@ -27,7 +27,6 @@ public class SafUnidadesService implements ISafUnidadesService {
     @Autowired
     SafUnidadesRepository safUnidadesRepository;
 
-    @Override
     public Page<SafUnidades> getUnidades(SafUnidadesPage page, SafUnidadesSearchCriteria searchCriteria) {
         return safUniadesCriteriaRepository.findAllWithFilters(page, searchCriteria);
     }

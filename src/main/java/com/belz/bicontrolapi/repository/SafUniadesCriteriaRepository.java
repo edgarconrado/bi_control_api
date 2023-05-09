@@ -16,7 +16,6 @@ import java.util.*;
 import java.util.logging.Logger;
 
 @Repository
-@RequiredArgsConstructor
 public class SafUniadesCriteriaRepository {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(SafUniadesCriteriaRepository.class));
@@ -30,6 +29,11 @@ public class SafUniadesCriteriaRepository {
     }
     private final EntityManager entityManager;
     private final CriteriaBuilder criteriaBuilder;
+
+    public SafUniadesCriteriaRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+        this.criteriaBuilder = entityManager.getCriteriaBuilder();
+    }
 
     public Page<SafUnidades> findAllWithFilters(SafUnidadesPage safUnidadesPage, SafUnidadesSearchCriteria safUnidadesSearchCriteria) {
 
