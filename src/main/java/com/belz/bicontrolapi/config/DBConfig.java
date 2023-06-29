@@ -44,7 +44,6 @@ public class DBConfig {
         Properties jpaProperties = new Properties();
         jpaProperties.put("hibernate.hbm2ddl.auto","none");
         jpaProperties.put("hibernate.default_schema",environment.getRequiredProperty("spring.jpa.hibernate.schema"));
-        //jpaProperties.put("hibernate.physical_naming_strategy","com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy");
         jpaProperties.put("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");
         jpaProperties.put("hibernate.show_sql",true);
         factory.setJpaProperties(jpaProperties);
