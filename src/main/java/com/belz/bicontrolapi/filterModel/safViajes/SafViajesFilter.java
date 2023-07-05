@@ -9,6 +9,4 @@ public class SafViajesFilter {
     SafViajesPage safViajesPage;
     SafViajesSearchCriteria safViajesSearchCriteria;
     CommonColumnsModel safViajesCommonColumnsModel;
-
-
 }

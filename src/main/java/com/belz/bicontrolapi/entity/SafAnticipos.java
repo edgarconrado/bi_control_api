@@ -1,15 +1,15 @@
 package com.belz.bicontrolapi.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "saf_anticipos")
 @Entity
 public class SafAnticipos {
@@ -89,8 +89,8 @@ public class SafAnticipos {
     @Column(name = "PBanco")
     private String pBanco;
 
-    @Column(name = "PCuentabancaria")
-    private String pCuentaBancaria;
+    @Column(name = "Cuentabancaria")
+    private String CuentaBancaria;
 
     @Column(name = "Portador")
     private String portador;
