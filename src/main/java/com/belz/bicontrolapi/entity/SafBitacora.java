@@ -4,15 +4,15 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "saf_bitacora")
 @Entity
 public class SafBitacora {
@@ -40,7 +40,7 @@ public class SafBitacora {
     private Double salarioDiario;
 
     @Column(name = "SueldoBase")
-    private Double sueldoBase;
+    private String sueldoBase;
 
     @Column(name = "TipoEquipo")
     private String tipoeEquipo;
@@ -178,7 +178,7 @@ public class SafBitacora {
     private Double sueldoDiario;
 
     @Column(name = "SueldoOperador")
-    private Double sueldoOperador;
+    private String sueldoOperador;
 
     @Column(name = "Termino")
     private Double termino;
@@ -187,7 +187,7 @@ public class SafBitacora {
     private Date fecha;
 
     @Column(name = "Fsalida")
-    private Date fSalida;
+    private String fSalida;
 
     @Column(name = "CuentaContpaq")
     private String cuentaContpaq;
