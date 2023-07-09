@@ -1,20 +1,22 @@
 package com.belz.bicontrolapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
-@Setter
+@Entity(name = "saf_bitacora-ptofit")
 @Getter
+@Setter
 @ToString
-@Table(name = "saf_bitacora-ptofit")
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
 public class SafBitacoraPtofit {
 
     @Id
@@ -28,16 +30,16 @@ public class SafBitacoraPtofit {
     private String concepto;
 
     @Column(name = "ConceptoComp")
-    private String  conceptoComp;
+    private String  concepto_comp;
 
     @Column(name = "ConceptoContable")
-    private String conceptoContable;
+    private String concepto_contable;
 
     @Column(name = "Cuenta")
     private String cuenta;
 
     @Column(name = "CuentaContpaq")
-    private String cuentaContpaq;
+    private String cuenta_contpaq;
 
     @Column(name = "Fecha")
     private Date fecha;
@@ -49,43 +51,43 @@ public class SafBitacoraPtofit {
     private String hora;
 
     @Column(name = "idBitacora")
-    private String idBitacota;
+    private String id_bitacota;
 
     @Column(name = "idCaseta")
-    private String idCaseta;
+    private String id_caseta;
 
     @Column(name = "idCuentaContable")
-    private String idCuentaContable;
+    private String id_cuenta_contable;
 
     @Column(name = "idOrigen")
-    private String idOrigen;
+    private String id_origen;
 
     @Column(name = "idProveedor")
-    private String idProveedor;
+    private String id_proveedor;
 
     @Column(name = "idViaje")
-    private String idViaje;
+    private String id_viaje;
 
     @Column(name = "Importe")
     private Double importe;
 
     @Column(name = "ImporteAbono")
-    private Double importeAbono;
+    private Double importe_abono;
 
     @Column(name = "ImporteGasto")
-    private Double importeGasto;
+    private Double importe_gasto;
 
     @Column(name = "ImporteOperador")
-    private Double importeOperador;
+    private Double importe_operador;
 
     @Column(name = "ImporteUnitario")
-    private Double importeUnitario;
+    private Double importe_unitario;
 
     @Column(name = "Iva")
     private Double iva;
 
     @Column(name = "MainTable")
-    private String mainTable;
+    private String main_table;
 
     @Column(name = "Prefijo")
     private String prefijo;
@@ -102,10 +104,10 @@ public class SafBitacoraPtofit {
     @Column(name = "Retencion")
     private Integer retencion;
     @Column(name = "TasaIva")
-    private Integer tasaIva;
+    private Integer tasa_iva;
 
     @Column(name = "TasaRet")
-    private Integer tasaRet;
+    private Integer tasa_ret;
 
     @Column(name = "Tipo")
     private String tipo;
@@ -123,24 +125,24 @@ public class SafBitacoraPtofit {
     private String viaje;
 
     @Column(name = "ZzFechaCreo")
-    private Date zzFechaCreo;
+    private Date zz_fecha_creo;
 
     @Column(name = "ZzFechaModifico")
-    private Date zzFechaModifico;
+    private Date zz_fecha_modifico;
 
     @Column(name = "ZzHoraCreo")
-    private String zzHoraCreo;
+    private String zz_hora_creo;
 
     @Column(name = "ZzHoraModifico")
-    private String zzHoraModifico;
+    private String zz_hora_modifico;
 
     @Column(name = "ZzQuienCreo")
-    private String zzQuienCreo;
+    private String zz_quien_creo;
 
     @Column(name = "ZzQuienModifico")
-    private String zzQuienModifico;
+    private String zz_quien_modifico;
 
     @Column(name = "viajeCompleto")
-    private String viajeCompleto;
+    private String viaje_completo;
 
 }
