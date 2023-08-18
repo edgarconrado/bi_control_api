@@ -1,5 +1,7 @@
 package com.belz.bicontrolapi.entity;
 
+import com.belz.bicontrolapi.util.annotations.CommonConstructor;
+import com.belz.bicontrolapi.util.annotations.OrderCustom;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
@@ -14,12 +16,12 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
 public class SafBitacoraPtofit {
 
     @Id
+    @OrderCustom
     @Column(name = "id")
     private String id;
 
@@ -145,4 +147,49 @@ public class SafBitacoraPtofit {
     @Column(name = "viajeCompleto")
     private String viaje_completo;
 
+    @CommonConstructor
+    public SafBitacoraPtofit(String id, Integer cantidad, String concepto, String concepto_comp, String concepto_contable, String cuenta, String cuenta_contpaq, Date fecha, String forma, String hora, String id_bitacota, String id_caseta, String id_cuenta_contable, String id_origen, String id_proveedor, String id_viaje, Double importe, Double importe_abono, Double importe_gasto, Double importe_operador, Double importe_unitario, Double iva, String main_table, String prefijo, String proveedor, String ref, String referencia, Integer retencion, Integer tasa_iva, Integer tasa_ret, String tipo, Double total, String transferencia, String uuid, String viaje, Date zz_fecha_creo, Date zz_fecha_modifico, String zz_hora_creo, String zz_hora_modifico, String zz_quien_creo, String zz_quien_modifico, String viaje_completo) {
+        this.id = id;
+        this.cantidad = cantidad;
+        this.concepto = concepto;
+        this.concepto_comp = concepto_comp;
+        this.concepto_contable = concepto_contable;
+        this.cuenta = cuenta;
+        this.cuenta_contpaq = cuenta_contpaq;
+        this.fecha = fecha;
+        this.forma = forma;
+        this.hora = hora;
+        this.id_bitacota = id_bitacota;
+        this.id_caseta = id_caseta;
+        this.id_cuenta_contable = id_cuenta_contable;
+        this.id_origen = id_origen;
+        this.id_proveedor = id_proveedor;
+        this.id_viaje = id_viaje;
+        this.importe = importe;
+        this.importe_abono = importe_abono;
+        this.importe_gasto = importe_gasto;
+        this.importe_operador = importe_operador;
+        this.importe_unitario = importe_unitario;
+        this.iva = iva;
+        this.main_table = main_table;
+        this.prefijo = prefijo;
+        this.proveedor = proveedor;
+        this.ref = ref;
+        this.referencia = referencia;
+        this.retencion = retencion;
+        this.tasa_iva = tasa_iva;
+        this.tasa_ret = tasa_ret;
+        this.tipo = tipo;
+        this.total = total;
+        this.transferencia = transferencia;
+        this.uuid = uuid;
+        this.viaje = viaje;
+        this.zz_fecha_creo = zz_fecha_creo;
+        this.zz_fecha_modifico = zz_fecha_modifico;
+        this.zz_hora_creo = zz_hora_creo;
+        this.zz_hora_modifico = zz_hora_modifico;
+        this.zz_quien_creo = zz_quien_creo;
+        this.zz_quien_modifico = zz_quien_modifico;
+        this.viaje_completo = viaje_completo;
+    }
 }

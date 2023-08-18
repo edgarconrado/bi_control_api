@@ -1,11 +1,8 @@
 package com.belz.bicontrolapi.service;
 
-import com.belz.bicontrolapi.entity.SafAnticipos;
-import com.belz.bicontrolapi.filterModel.safAnticipos.SafAnticiposPage;
-import com.belz.bicontrolapi.filterModel.safAnticipos.SafAnticiposSearchCriteria;
+import com.belz.bicontrolapi.dto.SafAnticiposDto;
 import org.springframework.data.domain.Page;
 
 public interface ISafAnticiposService {
-
-    Page<SafAnticipos> getAnticipos(SafAnticiposPage safAnticiposPage, SafAnticiposSearchCriteria safAnticiposSearchCriteria);
+    Page<SafAnticiposDto> getAll(Integer pageSize, Integer pageNumber);
 }

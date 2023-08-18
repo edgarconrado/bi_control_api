@@ -1,20 +1,25 @@
 package com.belz.bicontrolapi.entity;
 
+import com.belz.bicontrolapi.util.annotations.CommonConstructor;
+import com.belz.bicontrolapi.util.annotations.OrderCustom;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
 
+@Entity(name = "saf_anticipos")
 @Setter
 @Getter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "saf_anticipos")
-@Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+
 public class SafAnticipos {
 
     @Id
+    @OrderCustom
     @Column(name = "id")
     private String id;
 
@@ -119,4 +124,42 @@ public class SafAnticipos {
     @Column(name = "Viaje")
     private Integer viaje;
 
+    @CommonConstructor
+    public SafAnticipos(String id, String banco, String bitacora, String concepto, String conceptoCuenta, String destino, String eBanco, String eCuentaBancaria, String equipo, String eSucursal, Date fecha, Integer folio, String idBitacora, String idCuentabancariaE, String idCuentaBancariaP, String idCuentaContable, String idDepositoBanco, String idEmpresa, String idPersonal, String idViaje, String importe, String importeLetra, String motivo, String origen, String pBanco, String cuentaBancaria, String portador, String razonSocial, String referencia, String rfc, String status, String tipo, String tracto, String transferencia, Integer viaje) {
+        this.id = id;
+        this.banco = banco;
+        this.bitacora = bitacora;
+        this.concepto = concepto;
+        this.conceptoCuenta = conceptoCuenta;
+        this.destino = destino;
+        this.eBanco = eBanco;
+        this.eCuentaBancaria = eCuentaBancaria;
+        this.equipo = equipo;
+        this.eSucursal = eSucursal;
+        this.fecha = fecha;
+        this.folio = folio;
+        this.idBitacora = idBitacora;
+        this.idCuentabancariaE = idCuentabancariaE;
+        this.idCuentaBancariaP = idCuentaBancariaP;
+        this.idCuentaContable = idCuentaContable;
+        this.idDepositoBanco = idDepositoBanco;
+        this.idEmpresa = idEmpresa;
+        this.idPersonal = idPersonal;
+        this.idViaje = idViaje;
+        this.importe = importe;
+        this.importeLetra = importeLetra;
+        this.motivo = motivo;
+        this.origen = origen;
+        this.pBanco = pBanco;
+        CuentaBancaria = cuentaBancaria;
+        this.portador = portador;
+        this.razonSocial = razonSocial;
+        this.referencia = referencia;
+        this.rfc = rfc;
+        this.status = status;
+        this.tipo = tipo;
+        this.tracto = tracto;
+        Transferencia = transferencia;
+        this.viaje = viaje;
+    }
 }

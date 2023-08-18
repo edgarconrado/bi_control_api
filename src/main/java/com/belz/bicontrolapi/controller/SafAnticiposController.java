@@ -1,39 +1,25 @@
 package com.belz.bicontrolapi.controller;
 
-import com.belz.bicontrolapi.entity.SafAnticipos;
-import com.belz.bicontrolapi.filterModel.safAnticipos.SafAnticiposFilter;
+import com.belz.bicontrolapi.dto.SafAnticiposDto;
 import com.belz.bicontrolapi.service.ISafAnticiposService;
-import com.belz.bicontrolapi.service.ISafViajesService;
-import com.belz.bicontrolapi.service.impl.SafAnticiposService;
-import com.belz.bicontrolapi.service.impl.SafViajesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.logging.Logger;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("v1/api/anticipos")
+@RequestMapping("api/v1/anticipos")
 public class SafAnticiposController {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(SafAnticiposController.class));
-
-    String classname = String.valueOf(SafAnticiposController.class);
-
     @Autowired
-    ISafAnticiposService iSafAnticiposService;
+    ISafAnticiposService service;
 
-    @Autowired
-    SafAnticiposService safAnticiposService;
+    @GetMapping(value = "/getAnticipos", produces = "application/json")
+    public ResponseEntity<Page<SafAnticiposDto>> getAnticipos(
+            @RequestParam(defaultValue = "10") Integer pageSize,
+            @RequestParam(defaultValue = "0") Integer pageNumber) {
+        return new ResponseEntity<>(service.getAll(pageSize, pageNumber), HttpStatus.OK);
 
-    @PostMapping(value = "")
-    public ResponseEntity<Page<SafAnticipos>> anticipos(@RequestBody SafAnticiposFilter jsonAnticiposFilter) {
-        return new ResponseEntity<>(safAnticiposService.getAnticipos(jsonAnticiposFilter.getSafAnticiposPage(), jsonAnticiposFilter.getSafAnticiposSearchCriteria()),
-                HttpStatus.OK);
     }
 }

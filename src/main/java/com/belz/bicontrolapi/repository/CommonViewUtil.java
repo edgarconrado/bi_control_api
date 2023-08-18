@@ -51,6 +51,13 @@ public class CommonViewUtil<TEntity, TSearchCriteria> {
         return new PageImpl<>(typedQuery.getResultList(), getPageable(page), (Long) queryAndCount.get("count"));
     }
 
+    protected List<TEntity> findAllWithFiltersList(PageModel page, TSearchCriteria searchCriteria) {
+        page = reviewPage(page);
+        Map<String, Object> queryAndCount = createQuery(page, searchCriteria);
+        TypedQuery<TEntity> typedQuery = (TypedQuery<TEntity>) queryAndCount.get("query");
+        return typedQuery.getResultList();
+    }
+
     private Map<String, Object> createQuery(PageModel pageModel, TSearchCriteria searchCriteria) {
         HashMap<String, Object> mapResult = new HashMap<>();
         CriteriaQuery<TEntity> criteriaQuery = criteriaBuilder.createQuery(this.entityClass);

@@ -16,23 +16,22 @@ import java.util.Optional;
 @Setter
 public class PageModel {
     private int pageNumber = 0;
-    private int pageSize = 5;
+    private int pageSize= 10;
     private Sort.Direction sortDirection = Sort.Direction.ASC;
     private String sortBy;
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private Class<?> entityClass;
 
-    public PageModel() {}
-
-    public PageModel(Class<?> entityClass){
+    public PageModel(){}
+    public PageModel(Class<?> entityClass) {
         this.entityClass = entityClass;
         init();
     }
 
     public void setEntityClass(Class<?> entityClass) {
         this.entityClass = entityClass;
-        if (this.entityClass!=null)
+        if(this.entityClass!=null)
             init();
     }
 
@@ -43,7 +42,7 @@ public class PageModel {
     }
 
     public void init() {
-        if (entityClass!=null) {
+        if(entityClass!=null) {
             Optional<Field> firstId = Arrays.stream(entityClass.getDeclaredFields())
                     .filter(x -> x.getDeclaredAnnotation(OrderCustom.class) != null)
                     .findFirst();
@@ -59,5 +58,4 @@ public class PageModel {
             }
         }
     }
-
 }
