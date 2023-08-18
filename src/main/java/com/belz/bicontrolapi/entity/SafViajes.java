@@ -1,5 +1,7 @@
 package com.belz.bicontrolapi.entity;
 
+import com.belz.bicontrolapi.util.annotations.CommonConstructor;
+import com.belz.bicontrolapi.util.annotations.OrderCustom;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
@@ -10,21 +12,17 @@ import lombok.*;
 
 import java.util.Date;
 
-
-@Setter
+@Entity(name = "saf_viajes")
 @Getter
+@Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "saf_viajes")
-@Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.IntSequenceGenerator.class,
-        property = "@id"
-)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
 public class SafViajes {
 
     @Id
+    @OrderCustom
     @Column(name = "id")
     private String id;
 
@@ -162,4 +160,53 @@ public class SafViajes {
     @Column(name = "FTermino_ok")
     private Date fTerminoOk;
 
+    @CommonConstructor
+    public SafViajes(String id, String bitacora, String contenedores, String destino, Date fDespacho, Date fEntrada, Date fPlanta, Date fRetorno, Date fSalidaViaje, Date fTermino, String hEntrada, String hPlanta, String hRetorno, String hSalidaViaje, String hTermino, String idBitacora, String idEquipoM, String idEquipoU, String idOrdenCarga, String idPersonal, String idProveedor, String idRutaDV, String idRutaOD, String idTipoViaje, String idViaje, Double importe, Integer kilometrosVia, Integer kmSalida, String nombreOperador, String notas, Integer nTipo, String numeroUnidad, String numeroUnidadU, String origen, String placas, String planta, String proveedor, Integer solicitud, String status, String tipo, String tipoEquipo, String vacio, String viaDV, Integer viaje, String viaOD, Date fTerminoOk) {
+        this.id = id;
+        this.bitacora = bitacora;
+        this.contenedores = contenedores;
+        this.destino = destino;
+        this.fDespacho = fDespacho;
+        this.fEntrada = fEntrada;
+        this.fPlanta = fPlanta;
+        this.fRetorno = fRetorno;
+        this.fSalidaViaje = fSalidaViaje;
+        this.fTermino = fTermino;
+        this.hEntrada = hEntrada;
+        this.hPlanta = hPlanta;
+        this.hRetorno = hRetorno;
+        this.hSalidaViaje = hSalidaViaje;
+        this.hTermino = hTermino;
+        this.idBitacora = idBitacora;
+        this.idEquipoM = idEquipoM;
+        this.idEquipoU = idEquipoU;
+        this.idOrdenCarga = idOrdenCarga;
+        this.idPersonal = idPersonal;
+        this.idProveedor = idProveedor;
+        this.idRutaDV = idRutaDV;
+        this.idRutaOD = idRutaOD;
+        this.idTipoViaje = idTipoViaje;
+        this.idViaje = idViaje;
+        this.importe = importe;
+        this.kilometrosVia = kilometrosVia;
+        this.kmSalida = kmSalida;
+        this.nombreOperador = nombreOperador;
+        this.notas = notas;
+        this.nTipo = nTipo;
+        this.numeroUnidad = numeroUnidad;
+        this.numeroUnidadU = numeroUnidadU;
+        this.origen = origen;
+        this.placas = placas;
+        this.planta = planta;
+        this.proveedor = proveedor;
+        this.solicitud = solicitud;
+        this.status = status;
+        this.tipo = tipo;
+        this.tipoEquipo = tipoEquipo;
+        this.vacio = vacio;
+        this.viaDV = viaDV;
+        this.viaje = viaje;
+        this.viaOD = viaOD;
+        this.fTerminoOk = fTerminoOk;
+    }
 }
