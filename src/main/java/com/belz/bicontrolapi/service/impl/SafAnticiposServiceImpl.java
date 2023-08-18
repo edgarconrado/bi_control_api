@@ -10,6 +10,7 @@ import com.belz.bicontrolapi.util.ConvertType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -74,7 +75,7 @@ public class SafAnticiposServiceImpl extends ServiceUtil implements ISafAnticipo
                     item.get("Transferencia"),
                     convert.parseInteger(item.get("viaje"))
                     )).collect(Collectors.toList());
-        return null;
+        return new PageImpl<>(listInfo, anticiposData.getPageable(), anticiposData.getTotalElements());
     }
 }
 

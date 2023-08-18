@@ -9,6 +9,7 @@ import com.belz.bicontrolapi.util.ConvertType;
 import com.belz.bicontrolapi.util.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -80,6 +81,6 @@ public class SafViajesServiceImpl extends ServiceUtil implements ISafViajesServi
                      item.get("viaOD"),
                      convert.parseDate(item.get("fTerminoOk"))
                 )).collect(Collectors.toList());
-        return null;
+        return new PageImpl<>(listInfo, viajesData.getPageable(), viajesData.getTotalElements());
     }
 }

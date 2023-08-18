@@ -24,5 +24,4 @@ public class SafViajesController {
             @RequestParam(defaultValue = "0") Integer pageNumber){
         return new ResponseEntity<>(service.getAll(pageSize, pageNumber), HttpStatus.OK);
     }
-
 }
